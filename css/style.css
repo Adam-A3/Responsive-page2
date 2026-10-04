@@ -1,0 +1,91 @@
+/*Mobile first*/
+body{
+    /*Removes default margin*/
+    margin: 0;
+    /*Text font settings*/
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    /*Sets background color*/
+    background-color: #f4f4f4;
+}
+/* Container centers content and limits max width */
+.container {
+    max-width: 1100px;     /* Stops content stretching too wide on big screens */
+    margin: 40px auto;     /* 40px top/bottom, auto left/right = centered */
+    padding: 20px;         /* Internal spacing */
+  }
+h1 {
+    text-align: center;    /* Centers the heading */
+    margin: 0 0 8px;       /* No top margin, small space below */
+  }
+/* Lead paragraph */
+p.lead {
+    text-align: center;    /* Centers the intro text */
+    margin: 0 0 18px;      /* Space below paragraph */
+    color: #333;           /* Softer than pure black, still high contrast */
+  }
+
+/*Responsive Image*/
+.rwd-img{
+    width: 100%; /*Image fills container*/
+    height: auto; /* Keeps orginal aspect ratio*/
+    display: block; /*No inline gap under image*/
+    border-radius: 12px; /*Rounded border*/
+    margin-bottom: 18px; /*Space below image*/
+
+}
+
+/*Responsive video*/
+.video-wrap{
+    width: 100%; /* Full container width*/
+    aspect-ratio: 16/9; /*Locks aspect ratio*/
+    background: #000; /*Color while video loads*/
+    border-radius: 12px; /*Rounded corners*/
+    overflow: hidden; /*Clips video to rounded edges*/
+    margin-bottom: 24px; /*Space below video*/
+}
+.video-wrap iframe{
+    width: 100%; /*Files wrapper width*/
+    height: 100%; /*Files wrapper height*/
+    border: 0; /* Removes default iframe border*/
+    display: block; /*Removes inline gap*/
+}
+
+/*Cards wrapper*/
+.cards{
+    display: flex; /*Flex container*/
+    flex-wrap: wrap; /*Lets cards wrap to new rows*/
+    flex-direction: column;/* Cards stack vertically*/
+    gap: 20px; /*Spacing between cards*/
+}
+/*Individual cards*/
+.card{
+    background: #fff; /*White card background*/
+    border-radius: 12px;/*Soft rounded corners*/
+    padding: 16px; /*Inner padding*/
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08); /* Adds a shadow */
+}
+
+/*Tablet 600px and up*/
+@media(min-width:600px){
+    body{background: #eef4ff;}
+
+    .cards { flex-direction: row; } /*Items order in row*/
+
+    .card {width: 48%;} /*Two cards per row*/
+}
+
+/*Desktop 900px and up*/
+@media (min-width: 900px) {
+    body { background: #d8ffd8; }   /* Confirms the desktop breakpoint is active */
+
+    .card { width: 30%; }           /* ~3 cards per row (30% leaves room for the gap) */
+  }
+
+@media (min-width: 1200px) {
+    body { background: #ffe0f0; }   /* Confirms the large-desktop breakpoint is active */
+
+    .container { padding: 28px; }   /* More breathing room on big screens */
+
+    .card { width: 22%; }           /* ~4 cards per row (22% leaves room for the gap) */
+  }
